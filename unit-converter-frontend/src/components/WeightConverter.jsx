@@ -3,8 +3,8 @@ import axios from "axios";
 
 const WeightConverter = () => {
     const [value, setValue] = useState("");
-    const [fromUnit, setFromUnit] = useState("");
-    const [toUnit, setToUnit] = useState("");
+    const [fromUnit, setFromUnit] = useState("kilogram");
+    const [toUnit, setToUnit] = useState("pound");
     const [result, setResult] = useState("");
 
     const handleSubmit = async (e) => {

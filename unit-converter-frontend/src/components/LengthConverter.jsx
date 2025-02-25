@@ -4,7 +4,7 @@ import axios from "axios";
 const LengthConverter = () => {
     const [value, setValue] = useState("");
     const [fromUnit, setFromUnit] = useState("meter");
-    const [toUnit, setToUnit] = useState("feet");
+    const [toUnit, setToUnit] = useState("foot");
     const [result, setResult] = useState("");
 
     const handleSubmit = async (e) => {

@@ -3,8 +3,8 @@ import axios from "axios";
 
 const TemperatureConverter = () => {
     const [value, setValue] = useState("");
-    const [fromUnit, setFromUnit] = useState("");
-    const [toUnit, setToUnit] = useState("");
+    const [fromUnit, setFromUnit] = useState("celsius");
+    const [toUnit, setToUnit] = useState("fahrenheit");
     const [result, setResult] = useState("");
 
     const handleSubmit = async (e) => {
