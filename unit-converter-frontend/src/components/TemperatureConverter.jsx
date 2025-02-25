@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const LengthConverter = () => {
+const TemperatureConverter = () => {
     const [value, setValue] = useState("");
-    const [fromUnit, setFromUnit] = useState("meter");
-    const [toUnit, setToUnit] = useState("feet");
+    const [fromUnit, setFromUnit] = useState("");
+    const [toUnit, setToUnit] = useState("");
     const [result, setResult] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post("/convert-length", {
+          const response = await axios.post("/convert-temperature", {
             value,
             fromUnit,
             toUnit,
@@ -22,36 +22,26 @@ const LengthConverter = () => {
     };
 
     return (
-        <div className="m-auto  bg-white p-10 rounded-b-lg shadow-lg">
-            <h1 className="text-2xl font-bold mb-5 text-center">Length Converter</h1>
+        <div className="m-auto  bg-white p-10 rounded-lg shadow-lg">
+            <h1 className="text-2xl font-bold mb-5 text-center">Temperature Converter</h1>
             <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
                 
                 <select
                 value={fromUnit}
                 onChange={(e) => setFromUnit(e.target.value)}
                 className="text-center border-solid border-1 rounded-lg p-1">
-                    <option value="milimeter">Milimeter</option>
-                    <option value="centimeter">Centimeter</option>
-                    <option value="meter">Meter</option>
-                    <option value="kilometer">Kilometer</option>
-                    <option value="inch">Inch</option>
-                    <option value="foot">Foot</option>
-                    <option value="yard">Yard</option>
-                    <option value="mile">File</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
 
                 </select>
                 <select
                 value={toUnit}
                 onChange={(e) => setToUnit(e.target.value)}
                 className="text-center border-solid border-1 rounded-lg p-1">
-                    <option value="milimeter">Milimeter</option>
-                    <option value="centimeter">Centimeter</option>
-                    <option value="meter">Meter</option>
-                    <option value="kilometer">Kilometer</option>
-                    <option value="inch">Inch</option>
-                    <option value="foot">Foot</option>
-                    <option value="yard">Yard</option>
-                    <option value="mile">Mile</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
                 </select>
                 <input 
                 type="number"
@@ -73,4 +63,4 @@ const LengthConverter = () => {
     );
 }
 
-export default LengthConverter;
+export default TemperatureConverter;
